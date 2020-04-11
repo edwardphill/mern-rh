@@ -14,10 +14,16 @@ app.use(bodyParser.json());
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
 
+// if api route, have express handle, otherwise, delegate control to client, (react router handles views / routing)
 app.use("/api", movieRouter);
+
+// serve file / react app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
