@@ -41,11 +41,13 @@ $ npm start
 
 ## Built With
 
-- React
 - MongoDB
-- Bulma
+- ExpressJS
+- ReactJS
+- NodeJS
+- Bootsrap React
 
-## Wireframe
+### Static Wireframe
 
 ![RH - Landing Page](https://user-images.githubusercontent.com/30938466/78270319-aa787380-74d8-11ea-8448-3ed869c41449.png)
 ![RH - Ranch Dashboard after login](https://user-images.githubusercontent.com/30938466/78270424-ce3bb980-74d8-11ea-818b-256ef553cee5.png)
