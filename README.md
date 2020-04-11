@@ -4,9 +4,9 @@ A modern farm hand app.
 
 ## Configuring App
 
-Verify MongoDB
-
 ```
+$ verify mongo
+--
 $ cd mern-rh
 $ cd ranch-hand-app
 --
