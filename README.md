@@ -13,8 +13,8 @@ $ cd server
 $ npm install
 $ nodemon index.js
 $ cd client
-$ yarn install
-$ yarn start
+$ npm install
+$ npm start
 ```
 
 ![Gif of app](https://media.giphy.com/media/KeWkFRJmEcheGCHBzr/giphy.gif)
