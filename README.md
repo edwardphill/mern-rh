@@ -9,13 +9,20 @@ Verify MongoDB
 ```
 $ cd mern-rh
 $ cd ranch-hand-app
+--
 $ cd server
 $ npm install
 $ nodemon index.js
+--
+$ cd ..
 $ cd client
 $ npm install
 $ npm start
 ```
+
+## App Running On
+
+- [http://localhost:8000/](http://localhost:8000/)
 
 ![Gif of app](https://media.giphy.com/media/KeWkFRJmEcheGCHBzr/giphy.gif)
 
