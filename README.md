@@ -7,12 +7,11 @@ A modern farm hand app.
 Verify MongoDB
 
 ```
-$ cd movies-app
+$ cd mern-rh
+$ cd ranch-hand-app
 $ cd server
 $ npm install
 $ nodemon index.js
-
-$ cd movies-app
 $ cd client
 $ yarn install
 $ yarn start
