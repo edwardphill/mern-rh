@@ -6,7 +6,7 @@ const db = require("./db");
 const movieRouter = require("./routes/movie-router");
 
 const app = express();
-const apiPort = 4000;
+const apiPort = process.env.PORT || 4000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
