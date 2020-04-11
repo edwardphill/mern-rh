@@ -70,7 +70,7 @@ class MoviesInsert extends Component {
     const payload = { name, rating, time: arrayTime };
 
     await api.insertMovie(payload).then((res) => {
-      window.alert(`Movie inserted successfully`);
+      window.alert(`Field inserted successfully`);
       this.setState({
         name: "",
         rating: "",
@@ -111,7 +111,7 @@ class MoviesInsert extends Component {
           onChange={this.handleChangeInputTime}
         />
 
-        <Button onClick={this.handleIncludeMovie}>Add Movie</Button>
+        <Button onClick={this.handleIncludeMovie}>Add Field</Button>
         <CancelButton href={"/movies/list"}>Cancel</CancelButton>
       </Wrapper>
     );
