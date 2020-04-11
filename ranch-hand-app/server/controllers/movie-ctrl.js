@@ -1,3 +1,5 @@
+// will need users, fields, and herd, start with fields
+
 const Movie = require("../models/field-model");
 
 createMovie = (req, res) => {
