@@ -4,7 +4,8 @@
   "description": "A modern farm hand app.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd ranch-hand-app/server && npm start",
+    "heroku-postbuild": "cd ranch-hand-app/client && npm run build"
   },
   "repository": {
     "type": "git",
