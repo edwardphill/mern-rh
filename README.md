@@ -24,6 +24,8 @@ $ npm start
 
 - [http://localhost:8000/](http://localhost:8000/)
 
+## Simple CLickable Wireframe
+
 ![Gif of app](https://media.giphy.com/media/KeWkFRJmEcheGCHBzr/giphy.gif)
 
 ## Team
