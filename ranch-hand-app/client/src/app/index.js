@@ -13,11 +13,11 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
+        <Route path="/" exact component={Landing} />
         <Route path="/movies/list" exact component={MoviesList} />
         <Route path="/movies/create" exact component={MoviesInsert} />
         <Route path="/movies/update/:id" exact component={MoviesUpdate} />
       </Switch>
-      <Landing />
     </Router>
   );
 }
