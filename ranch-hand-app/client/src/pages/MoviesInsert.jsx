@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import api from "../api";
-
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import styled from "styled-components";
 
 const Title = styled.h1.attrs({
@@ -83,36 +85,42 @@ class MoviesInsert extends Component {
     const { name, rating, time } = this.state;
     return (
       <Wrapper>
-        <Title>Add Field</Title>
+        <Container fluid="md">
+          <Row>
+            <Col>
+              <Title>Add Field</Title>
 
-        <Label>Name: </Label>
-        <InputText
-          type="text"
-          value={name}
-          onChange={this.handleChangeInputName}
-        />
+              <Label>Name: </Label>
+              <InputText
+                type="text"
+                value={name}
+                onChange={this.handleChangeInputName}
+              />
 
-        <Label>Acres </Label>
-        <InputText
-          type="number"
-          step="0.1"
-          lang="en-US"
-          min="0"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={rating}
-          onChange={this.handleChangeInputRating}
-        />
+              <Label>Acres </Label>
+              <InputText
+                type="number"
+                step="0.1"
+                lang="en-US"
+                min="0"
+                max="10"
+                pattern="[0-9]+([,\.][0-9]+)?"
+                value={rating}
+                onChange={this.handleChangeInputRating}
+              />
 
-        <Label>Last Rolled </Label>
-        <InputText
-          type="text"
-          value={time}
-          onChange={this.handleChangeInputTime}
-        />
+              <Label>Last Rolled </Label>
+              <InputText
+                type="text"
+                value={time}
+                onChange={this.handleChangeInputTime}
+              />
 
-        <Button onClick={this.handleIncludeMovie}>Add Field</Button>
-        <CancelButton href={"/movies/list"}>Cancel</CancelButton>
+              <Button onClick={this.handleIncludeMovie}>Add Field</Button>
+              <CancelButton href={"/movies/list"}>Cancel</CancelButton>
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     );
   }

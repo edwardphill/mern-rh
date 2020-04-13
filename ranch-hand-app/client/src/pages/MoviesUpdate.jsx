@@ -99,7 +99,7 @@ class MoviesUpdate extends Component {
     const { name, rating, time } = this.state;
     return (
       <Wrapper>
-        <Container fluid>
+        <Container fluid="md">
           <Row>
             <Col>
               <Title>
