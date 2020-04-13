@@ -11,7 +11,12 @@ class Logo extends Component {
   render() {
     return (
       <Wrapper href="/">
-        <p>Ranch Hand</p>
+        <img
+          src="https://user-images.githubusercontent.com/30938466/79150346-99f8b080-7d96-11ea-8376-84f19e7e2c2d.png"
+          width="50"
+          height="50"
+          alt="sambarros.com"
+        />
       </Wrapper>
     );
   }

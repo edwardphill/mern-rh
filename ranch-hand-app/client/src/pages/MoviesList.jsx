@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import ReactTable from "react-table-6";
 import api from "../api";
 import styled from "styled-components";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-// import "react-table.css";
+// import "react-table/react-table.css";
 
 const Wrapper = styled.div`
   padding: 0 40px 40px 40px;
@@ -127,16 +130,22 @@ class MoviesList extends Component {
 
     return (
       <Wrapper>
-        {showTable && (
-          <ReactTable
-            data={movies}
-            columns={columns}
-            loading={isLoading}
-            defaultPageSize={10}
-            showPageSizeOptions={true}
-            minRows={0}
-          />
-        )}
+        <Container fluid="md">
+          <Row>
+            <Col>
+              {showTable && (
+                <ReactTable
+                  data={movies}
+                  columns={columns}
+                  loading={isLoading}
+                  defaultPageSize={10}
+                  showPageSizeOptions={true}
+                  minRows={0}
+                />
+              )}
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     );
   }

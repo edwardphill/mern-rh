@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavBar } from "../components";
 import { MoviesList, MoviesInsert, MoviesUpdate } from "../pages";
 
+import Landing from "../components/Landing";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
         <Route path="/movies/create" exact component={MoviesInsert} />
         <Route path="/movies/update/:id" exact component={MoviesUpdate} />
       </Switch>
+      <Landing />
     </Router>
   );
 }

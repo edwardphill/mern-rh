@@ -3,6 +3,10 @@ import api from "../api";
 
 import styled from "styled-components";
 
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 const Title = styled.h1.attrs({
   className: "h1",
 })``;
@@ -95,36 +99,44 @@ class MoviesUpdate extends Component {
     const { name, rating, time } = this.state;
     return (
       <Wrapper>
-        <Title>Create Movie</Title>
+        <Container fluid>
+          <Row>
+            <Col>
+              <Title>
+                <Title>Add A Field</Title>
 
-        <Label>Name: </Label>
-        <InputText
-          type="text"
-          value={name}
-          onChange={this.handleChangeInputName}
-        />
+                <Label>Name: </Label>
+                <InputText
+                  type="text"
+                  value={name}
+                  onChange={this.handleChangeInputName}
+                />
 
-        <Label>Rating: </Label>
-        <InputText
-          type="number"
-          step="0.1"
-          lang="en-US"
-          min="0"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={rating}
-          onChange={this.handleChangeInputRating}
-        />
+                <Label>Rating: </Label>
+                <InputText
+                  type="number"
+                  step="0.1"
+                  lang="en-US"
+                  min="0"
+                  max="10"
+                  pattern="[0-9]+([,\.][0-9]+)?"
+                  value={rating}
+                  onChange={this.handleChangeInputRating}
+                />
 
-        <Label>Time: </Label>
-        <InputText
-          type="text"
-          value={time}
-          onChange={this.handleChangeInputTime}
-        />
+                <Label>Time: </Label>
+                <InputText
+                  type="text"
+                  value={time}
+                  onChange={this.handleChangeInputTime}
+                />
 
-        <Button onClick={this.handleUpdateMovie}>Update Field</Button>
-        <CancelButton href={"/movies/list"}>Cancel</CancelButton>
+                <Button onClick={this.handleUpdateMovie}>Update Field</Button>
+                <CancelButton href={"/movies/list"}>Cancel</CancelButton>
+              </Title>
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     );
   }
