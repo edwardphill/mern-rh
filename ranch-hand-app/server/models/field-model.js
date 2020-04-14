@@ -5,7 +5,7 @@ const Field = new Schema(
   {
     fence: { type: String, required: true },
     draggedDate: { type: Date, required: true },
-    daysGraced: { type: Number, required: true },
+    daysGrazed: { type: Number, required: true },
     acreage: { type: Number, required: true },
     lyme: { type: Date, required: true },
     fertilized: { type: Date, required: true },
