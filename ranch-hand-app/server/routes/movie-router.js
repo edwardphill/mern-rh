@@ -1,5 +1,3 @@
-// add routes
-
 const express = require("express");
 
 const MovieCtrl = require("../controllers/movie-ctrl");
