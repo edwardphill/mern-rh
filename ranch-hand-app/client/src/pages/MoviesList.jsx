@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// import "react-table/react-table.css";
+import "react-table-v6/react-table.css";
 
 const Wrapper = styled.div`
   padding: 0 40px 40px 40px;
@@ -22,6 +22,7 @@ const Delete = styled.div`
   cursor: pointer;
 `;
 
+// update fields
 class UpdateMovie extends Component {
   updateUser = (event) => {
     event.preventDefault();
@@ -34,6 +35,7 @@ class UpdateMovie extends Component {
   }
 }
 
+// delete field
 class DeleteMovie extends Component {
   deleteUser = (event) => {
     event.preventDefault();
@@ -52,6 +54,8 @@ class DeleteMovie extends Component {
     return <Delete onClick={this.deleteUser}>Delete</Delete>;
   }
 }
+
+// list fields in table... need better way to display, working on displaying in cards.
 
 class MoviesList extends Component {
   constructor(props) {
