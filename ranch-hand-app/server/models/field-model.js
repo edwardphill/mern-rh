@@ -5,7 +5,7 @@ const Movie = new Schema(
   {
     name: { type: String, required: true },
     time: { type: [String], required: true },
-    rating: { type: Number, required: true },
+    lastRolled: { type: Number, required: true },
   },
   { timestamps: true }
 );

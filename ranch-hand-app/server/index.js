@@ -8,10 +8,12 @@ const movieRouter = require("./routes/movie-router");
 
 const app = express();
 const apiPort = process.env.PORT || 8000;
-
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
@@ -24,6 +26,8 @@ app.use("/api", movieRouter);
 
 // serve file / react app
 app.get("*", (req, res) => {
+  console.log("ping");
+  console.log(path.join(__dirname, "../client/build/index.html"));
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 

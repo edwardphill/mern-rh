@@ -83,23 +83,23 @@ class MoviesList extends Component {
     console.log("TCL: MoviesList -> render -> movies", movies);
 
     const columns = [
+      // {
+      //   Header: "ID",
+      //   accessor: "_id",
+      //   filterable: true,
+      // },
       {
-        Header: "ID",
-        accessor: "_id",
-        filterable: true,
-      },
-      {
-        Header: "Name",
+        Header: "Field Name",
         accessor: "name",
         filterable: true,
       },
       {
-        Header: "Rating",
+        Header: "Acres",
         accessor: "rating",
         filterable: true,
       },
       {
-        Header: "Time",
+        Header: "Last Rolled",
         accessor: "time",
         Cell: (props) => <span>{props.value.join(" / ")}</span>,
       },
