@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Field = new Schema(
@@ -11,9 +11,9 @@ const Field = new Schema(
     fertilized: { type: Date, required: true },
     hayed: { type: Date, required: true },
     bales: { type: Number, required: true },
-    herd: {type: String}
+    herd: { type: mongoose.SchemaTypes.ObjectId },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("fields", Field);
+module.exports = Field;

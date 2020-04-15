@@ -1,13 +1,13 @@
-const express = require("express");
+const express = require('express');
 
-const HerdCtrl = require("../controllers/herd-ctrl");
+const HerdCtrl = require('../controllers/herd-ctrl');
 
 const router = express.Router();
 
-router.post("/herd", HerdCtrl.createHerd);
-router.put("/herd/:id", HerdCtrl.updateHerd);
-router.delete("/herd/:id", HerdCtrl.deleteHerd);
-router.get("/herd/:id", HerdCtrl.getHerdById);
-router.get("/herd", HerdCtrl.getHerd);
+router.post('/herds', HerdCtrl.createHerd);
+router.put('/herds/:id', HerdCtrl.updateHerd);
+router.delete('/herds/:id', HerdCtrl.deleteHerd);
+router.get('/herds/:id', HerdCtrl.getHerdById);
+router.get('/herds', HerdCtrl.getHerds);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 // will need users, fields, and herd, start with fields
 
-const User = require("../models/user-model");
+const User = require('../models/user-model');
 
 createUser = (req, res) => {
   const body = req.body;
@@ -8,7 +8,7 @@ createUser = (req, res) => {
   if (!body) {
     return res.status(400).json({
       success: false,
-      error: "You must provide a user",
+      error: 'You must provide a user',
     });
   }
 
@@ -24,13 +24,13 @@ createUser = (req, res) => {
       return res.status(201).json({
         success: true,
         id: user._id,
-        message: "User created!",
+        message: 'User created!',
       });
     })
     .catch((error) => {
       return res.status(400).json({
         error,
-        message: "User not created!",
+        message: 'User not created!',
       });
     });
 };
@@ -41,7 +41,7 @@ updateUser = async (req, res) => {
   if (!body) {
     return res.status(400).json({
       success: false,
-      error: "You must provide a body to update",
+      error: 'You must provide a body to update',
     });
   }
 
@@ -49,7 +49,7 @@ updateUser = async (req, res) => {
     if (err) {
       return res.status(404).json({
         err,
-        message: "User not found!",
+        message: 'User not found!',
       });
     }
     user.username = body.username;
@@ -62,19 +62,19 @@ updateUser = async (req, res) => {
         return res.status(200).json({
           success: true,
           id: user._id,
-          message: "User updated!",
+          message: 'User updated!',
         });
       })
       .catch((error) => {
         return res.status(404).json({
           error,
-          message: "User not updated!",
+          message: 'User not updated!',
         });
       });
   });
 };
 
-deleteMovie = async (req, res) => {
+deleteUser = async (req, res) => {
   await User.findOneAndDelete({ _id: req.params.id }, (err, user) => {
     if (err) {
       return res.status(400).json({ success: false, error: err });
