@@ -22,13 +22,13 @@ class Links extends Component {
         <Collapse>
           <List>
             <Item>
-              <Link to="/movies/list" className="nav-link">
-                List Fields
+              <Link to="/ranches" className="nav-link">
+                Ranches
               </Link>
             </Item>
             <Item>
-              <Link to="/movies/create" className="nav-link">
-                Create Field
+              <Link to="/login" className="nav-link">
+                Login
               </Link>
             </Item>
           </List>

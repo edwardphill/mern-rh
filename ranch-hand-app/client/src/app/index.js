@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { NavBar } from "../components";
-import { MoviesList, MoviesInsert, MoviesUpdate } from "../pages";
+import { RanchList, MoviesInsert, MoviesUpdate } from "../pages";
 
 import Landing from "../components/Landing";
 
@@ -14,9 +14,9 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/movies/list" exact component={MoviesList} />
-        <Route path="/movies/create" exact component={MoviesInsert} />
-        <Route path="/movies/update/:id" exact component={MoviesUpdate} />
+        <Route path="/ranches" exact component={RanchList} />
+        <Route path="/ranches/create" exact component={MoviesInsert} />
+        <Route path="/ranches/update/:id" exact component={MoviesUpdate} />
       </Switch>
     </Router>
   );
