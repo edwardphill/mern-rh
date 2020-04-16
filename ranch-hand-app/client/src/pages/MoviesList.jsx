@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import ReactTable from "react-table-6";
-import api from "../api";
-import styled from "styled-components";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React, { Component } from 'react';
+import ReactTable from 'react-table-6';
+import api from '../api';
+import styled from 'styled-components';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-import "react-table-v6/react-table.css";
+import 'react-table-v6/react-table.css';
 
 const Wrapper = styled.div`
   padding: 0 40px 40px 40px;
@@ -80,39 +80,43 @@ class UserList extends Component {
 
   render() {
     const { movies, isLoading } = this.state;
-    console.log("TCL: MoviesList -> render -> movies", movies);
+    console.log('TCL: MoviesList -> render -> movies', movies);
 
     const columns = [
       {
-        Header: "ID",
-        accessor: "_id",
+        Header: 'ID',
+        accessor: '_id',
         filterable: true,
       },
       {
-        Header: "Name",
-        accessor: "name",
+        Header: 'Name',
+        accessor: 'name',
         filterable: true,
       },
       {
-        Header: "Rating",
-        accessor: "rating",
+        Header: 'Rating',
+        accessor: 'rating',
         filterable: true,
       },
       {
-        Header: "Time",
-        accessor: "time",
-        Cell: (props) => <span>{props.value.join(" / ")}</span>,
+        Header: 'Time',
+        accessor: 'time',
+        Cell: (props) => <span>{props.value.join(' / ')}</span>,
       },
       {
-        Header: "",
-        accessor: "",
+        Header: '',
+        accessor: '',
         Cell: function (props) {
-          return <span>{/* <DeleteMovie id={props.original._id} /> */}</span>;
+          return (
+            <span>
+              <DeleteMovie id={props.original._id} />
+            </span>
+          );
         },
       },
       {
-        Header: "",
-        accessor: "",
+        Header: '',
+        accessor: '',
         Cell: function (props) {
           return (
             <span>
@@ -151,4 +155,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+export default MoviesList;
