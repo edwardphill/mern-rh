@@ -17,10 +17,11 @@ class Landing extends Component {
         <br />
         <br />
 
-        <Carousel>
+        <Carousel border="primary">
           <Carousel.Item>
             <img
-              className="d-block w-100"
+
+              className="d-block w-100 rounded mb-0"
               src="https://user-images.githubusercontent.com/30938466/79510363-3dea9200-800b-11ea-90b0-d1798d91cca2.png"
               alt="RH1"
               fluid
@@ -33,7 +34,7 @@ class Landing extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="d-block w-100 rounded mb-0"
               src="https://user-images.githubusercontent.com/30938466/79510094-bb61d280-800a-11ea-951d-0bf61bc4ffe1.png"
               alt="Fields"
               fluid
@@ -47,7 +48,7 @@ class Landing extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100 "
+              className="d-block w-100 rounded mb-0"
               src="https://user-images.githubusercontent.com/30938466/79510367-3f1bbf00-800b-11ea-9c6d-a666444ea240.png"
               alt="Herds"
               fluid
@@ -92,6 +93,9 @@ class Landing extends Component {
             </Card.Body>
           </Card>
         </CardDeck>
+        <br />
+        <br />
+        <br />
       </Container>
     );
   }
