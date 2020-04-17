@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
-import ReactTable from 'react-table-6';
-import api from '../api';
-import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { Component } from "react";
+import ReactTable from "react-table-6";
+import api from "../api";
+import ranches from "./ranches.json";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 
-import 'react-table-v6/react-table.css';
+import styled from "styled-components";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
+// const db = require("./db");
 
-const Wrapper = styled.div`
-  padding: 0 40px 40px 40px;
-`;
+// import "react-table-v6/react-table.css";
+
+// const Wrapper = styled.div`
+//   padding: 0 40px 40px 40px;
+// `;
 
 const Update = styled.div`
   color: #ef9b0f;
@@ -27,7 +33,7 @@ class UpdateMovie extends Component {
   updateUser = (event) => {
     event.preventDefault();
 
-    window.location.href = `/movies/update/${this.props.id}`;
+    window.location.href = `/ranches/update/${this.props.id}`;
   };
 
   render() {
@@ -57,102 +63,131 @@ class DeleteUser extends Component {
 
 // list fields in table... need better way to display, working on displaying in cards.
 
-class UserList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: [],
-      columns: [],
-      isLoading: false,
-    };
-  }
-
-  componentDidMount = async () => {
-    this.setState({ isLoading: true });
-
-    await api.getAllMovies().then((movies) => {
-      this.setState({
-        movies: movies.data.data,
-        isLoading: false,
-      });
-    });
-  };
-
+class RanchList extends Component {
   render() {
-    const { movies, isLoading } = this.state;
-    console.log('TCL: MoviesList -> render -> movies', movies);
-
-    const columns = [
-      {
-        Header: 'ID',
-        accessor: '_id',
-        filterable: true,
-      },
-      {
-        Header: 'Name',
-        accessor: 'name',
-        filterable: true,
-      },
-      {
-        Header: 'Rating',
-        accessor: 'rating',
-        filterable: true,
-      },
-      {
-        Header: 'Time',
-        accessor: 'time',
-        Cell: (props) => <span>{props.value.join(' / ')}</span>,
-      },
-      {
-        Header: '',
-        accessor: '',
-        Cell: function (props) {
-          return (
-            <span>
-              <DeleteMovie id={props.original._id} />
-            </span>
-          );
-        },
-      },
-      {
-        Header: '',
-        accessor: '',
-        Cell: function (props) {
-          return (
-            <span>
-              <UpdateMovie id={props.original._id} />
-            </span>
-          );
-        },
-      },
-    ];
-
-    let showTable = true;
-    if (!movies.length) {
-      showTable = false;
-    }
-
     return (
-      <Wrapper>
+      <div>
         <Container fluid="md">
-          <Row>
-            <Col>
-              {showTable && (
-                <ReactTable
-                  data={movies}
-                  columns={columns}
-                  loading={isLoading}
-                  defaultPageSize={10}
-                  showPageSizeOptions={true}
-                  minRows={0}
-                />
-              )}
-            </Col>
-          </Row>
+          <div>
+            <h1>Ranches</h1>
+            <Card style={{ width: "18rem" }}>
+              <Card.Body>
+                <Card.Text>
+                  {ranches.map((ranchesList, index) => {
+                    return (
+                      <li>
+                        {ranchesList.name}
+
+                        <Link to="/ranches/:id"> Visit</Link>
+                      </li>
+                    );
+                  })}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
         </Container>
-      </Wrapper>
+      </div>
     );
   }
 }
 
-export default MoviesList;
+export default RanchList;
+
+//  OLD LIST FUNCTION
+
+// class RanchList extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       movies: [],
+//       columns: [],
+//       isLoading: false,
+//     };
+//   }
+
+//   componentDidMount = async () => {
+//     this.setState({ isLoading: true });
+
+//     await api.getAllMovies().then((movies) => {
+//       this.setState({
+//         movies: movies.data.data,
+//         isLoading: false,
+//       });
+//     });
+//   };
+
+//   render() {
+//     const { movies, isLoading } = this.state;
+//     console.log("TCL: MoviesList -> render -> movies", movies);
+
+//     const columns = [
+//       {
+//         Header: "ID",
+//         accessor: "_id",
+//         filterable: true,
+//       },
+//       {
+//         Header: "Name",
+//         accessor: "name",
+//         filterable: true,
+//       },
+//       {
+//         Header: "Rating",
+//         accessor: "rating",
+//         filterable: true,
+//       },
+//       {
+//         Header: "Time",
+//         accessor: "time",
+//         Cell: (props) => <span>{props.value.join(" / ")}</span>,
+//       },
+//       {
+//         Header: "",
+//         accessor: "",
+//         Cell: function (props) {
+//           return <span>{/* <DeleteMovie id={props.original._id} /> */}</span>;
+//         },
+//       },
+//       {
+//         Header: "",
+//         accessor: "",
+//         Cell: function (props) {
+//           return (
+//             <span>
+//               <UpdateMovie id={props.original._id} />
+//             </span>
+//           );
+//         },
+//       },
+//     ];
+
+//     let showTable = true;
+//     if (!movies.length) {
+//       showTable = false;
+//     }
+
+//     return (
+//       <Wrapper>
+//         <Container fluid="md">
+//           <Row>
+//             <Col>
+//               {showTable && (
+//                 <ReactTable
+//                   data={movies}
+//                   columns={columns}
+//                   loading={isLoading}
+//                   defaultPageSize={10}
+//                   showPageSizeOptions={true}
+//                   minRows={0}
+//                 />
+//               )}
+//             </Col>
+//           </Row>
+//         </Container>
+//       </Wrapper>
+//     );
+//   }
+// }
+
+// export default RanchList;
